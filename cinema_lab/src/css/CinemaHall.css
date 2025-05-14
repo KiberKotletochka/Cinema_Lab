@@ -1,0 +1,149 @@
+.cinema-hall {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .cinema-hall h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .seats-grid {
+    width: 100%;
+    max-width: 800px; /* Збільшено з 600px до 800px */
+  }
+  
+  .seat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #34495e;
+    justify-content: center; /* Центруємо ряд для симетрії */
+  }
+  
+  .seat {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .seat.available {
+    background-color: #34c759; /* Зелений для вільних */
+  }
+  
+  .seat.selected {
+    background-color: #3498db; /* Синій для вибраних */
+  }
+  
+  .seat:hover {
+    opacity: 0.8;
+  }
+  
+  .selected-seats {
+    width: 100%;
+    max-width: 800px; /* Збільшено з 600px до 800px */
+    text-align: left;
+  }
+  
+  .selected-seats h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .selected-seats ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .selected-seats li {
+    font-size: 14px;
+    color: #34495e;
+    margin-bottom: 5px;
+  }
+  
+  .booking h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .screen {
+    width: 100%;
+    max-width: 800px; /* Відповідає ширині seats-grid */
+    height: 60px;
+    background: linear-gradient(180deg, #1a1a1a, #333); /* Темний градієнт для екрану */
+    border-radius: 0 0 50% 50%; /* Вигнутий знизу */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 768px) {
+    .cinema-hall h2 {
+      font-size: 1.5rem;
+    }
+
+    .seats-grid,
+    .selected-seats,
+    .screen {
+      max-width: 600px; /* Зменшено для середніх екранів */
+    }
+  
+    .seat {
+      width: 35px;
+      height: 35px;
+      font-size: 12px;
+    }
+  
+    .booking h2 {
+      font-size: 1.8rem;
+    }
+  
+    .screen {
+      height: 50px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .seats-grid,
+    .selected-seats,
+    .screen {
+      max-width: 350px; /* Зменшено для малих екранів */
+    }
+
+    .seat {
+      width: 30px;
+      height: 30px;
+      font-size: 10px;
+    }
+  
+    .booking h2 {
+      font-size: 1.5rem;
+    }
+  
+    .screen {
+      height: 40px;
+      font-size: 12px;
+    }
+  }

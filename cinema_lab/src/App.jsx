@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="container">
         <div className="logo-container">
-          <img src="logo.png" alt="MovieOn Logo" className="logo" />
+          <img src="/logo.png" alt="MovieOn Logo" className="logo" />
           <h1>MovieOn</h1>
         </div>
         <Routes>
