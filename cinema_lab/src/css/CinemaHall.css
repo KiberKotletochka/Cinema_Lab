@@ -14,7 +14,7 @@
   
   .seats-grid {
     width: 100%;
-    max-width: 800px; /* Збільшено з 600px до 800px */
+    max-width: 800px;
   }
   
   .seat-row {
@@ -24,7 +24,7 @@
     margin-bottom: 10px;
     font-size: 14px;
     color: #34495e;
-    justify-content: center; /* Центруємо ряд для симетрії */
+    justify-content: center;
   }
   
   .seat {
@@ -46,13 +46,22 @@
     background-color: #3498db; /* Синій для вибраних */
   }
   
-  .seat:hover {
+  .seat.booked {
+    background-color: #e74c3c; /* Червоний для заброньованих */
+    cursor: not-allowed;
+  }
+  
+  .seat.available:hover {
+    opacity: 0.8;
+  }
+  
+  .seat.selected:hover {
     opacity: 0.8;
   }
   
   .selected-seats {
     width: 100%;
-    max-width: 800px; /* Збільшено з 600px до 800px */
+    max-width: 800px;
     text-align: left;
   }
   
@@ -83,10 +92,10 @@
   
   .screen {
     width: 100%;
-    max-width: 800px; /* Відповідає ширині seats-grid */
+    max-width: 800px;
     height: 60px;
-    background: linear-gradient(180deg, #1a1a1a, #333); /* Темний градієнт для екрану */
-    border-radius: 0 0 50% 50%; /* Вигнутий знизу */
+    background: linear-gradient(180deg, #1a1a1a, #333);
+    border-radius: 0 0 50% 50%;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -98,15 +107,79 @@
     text-transform: uppercase;
   }
   
+  .booking-form {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  }
+  
+  .input-error {
+    border-color: #e74c3c !important;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-size: 12px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(135deg, #010f18, #14191d);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
   @media (max-width: 768px) {
     .cinema-hall h2 {
       font-size: 1.5rem;
     }
-
+  
     .seats-grid,
     .selected-seats,
-    .screen {
-      max-width: 600px; /* Зменшено для середніх екранів */
+    .screen,
+    .booking-form {
+      max-width: 600px;
     }
   
     .seat {
@@ -123,15 +196,24 @@
       height: 50px;
       font-size: 14px;
     }
+  
+    .form-group input {
+      font-size: 12px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
+    }
   }
   
   @media (max-width: 480px) {
     .seats-grid,
     .selected-seats,
-    .screen {
-      max-width: 350px; /* Зменшено для малих екранів */
+    .screen,
+    .booking-form {
+      max-width: 400px;
     }
-
+  
     .seat {
       width: 30px;
       height: 30px;
@@ -145,5 +227,13 @@
     .screen {
       height: 40px;
       font-size: 12px;
+    }
+  
+    .form-group input {
+      font-size: 12px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
     }
   }
