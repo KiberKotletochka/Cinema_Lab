@@ -2,7 +2,7 @@ const movies = [
     {
       id: 1,
       title: "Смертельна місія",
-      poster: "public/images/mission.webp",
+      poster: "/images/mission.webp",
       description: "Психологічний трилер розповідає про елітне тріо астронавтів на борту місії на супутник Сатурна Титан.",
       genre: "Фантастика, Трилер",
       showtime: "2025-06-05 18:00",
@@ -10,7 +10,7 @@ const movies = [
     {
       id: 2,
       title: "Серфер",
-      poster: "public/images/Surfer.jpg",
+      poster: "/images/Surfer.jpg",
       description: "«Серфер» — історія про людину, яку загнали в кут… І яка відмовилась здатися.",
       genre: "Трилер, Екшн",
       showtime: "2025-05-26 16:00",
@@ -18,7 +18,7 @@ const movies = [
     {
       id: 3,
       title: "Одне ціле",
-      poster: "public/images/odne.jpg",
+      poster: "/images/odne.jpg",
       description: "Міллі та Тім переїжджають заради роботи й стикаються з надприродним, що змінює їхні стосунки, життя і тіла.",
       genre: "Жахи, Трилер",
       showtime: "2025-07-11 17:00",
