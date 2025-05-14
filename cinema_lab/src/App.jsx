@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
 import Booking from './pages/Booking';
 import './css/MovieList.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -16,6 +18,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/booking/:id" element={<Booking />} />
         </Routes>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnHover
+          draggable
+          theme="light"
+        />
       </div>
     </Router>
   );
